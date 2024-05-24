@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #ec1f55;
+    --text-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #ebebeb;
+    color: var(--text-color)
+}
+
+html {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.player {
+    width: 480px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.player .icon-pause {
+    display: none;
+}
+
+.player.playing .icon-pause {
+    display: block;
+}
+
+.player.playing .icon-play {
+    display: none;
+}
+
+.dashboard {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 16px 16px 12px;
+    max-width: 480px;
+    background-color: white;
+    border-bottom: 1px solid #ebebeb;
+    border-radius: 4px;
+}
+
+/* Header */
+header {
+    text-align: center;
+}
+
+header h4 {
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+header h2 {
+    font-size: 20px;
+}
+
+/* CD */
+.cd {
+    margin: 8px auto auto;
+    width: 200px;
+    overflow: hidden;
+}
+
+.cd-thumb {
+    width: 100%;
+    padding-top: 100%; /* Theo width cua .cd*/
+    border-radius: 100%;
+    background-image: url("https://i.discogs.com/LQqdj3F4b55ca0okWtyb0cBsZkPbE-AUO3M405KSNi0/rs:fit/g:sm/q:90/h:600/w:598/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTI3MTA2/NjItMTI5NzYyNjQ4/NS5qcGVn.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Control */
+.control {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px 0 8px;
+}
+
+.control .btn {
+    color: #666;
+    padding: 12px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.control .btn.active {
+    color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 100%;
+    box-shadow: var(--primary-color) 0px 0px 16px 0px;
+}
+
+/* Progress bar */
+.progress {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Playlist */
+.playlist {
+    margin-top: 400px;
+    padding: 12px;
+}
+
+.song {
+    padding: 12px;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.song.active {
+    background-color: var(--primary-color);
+}
+
+.song:active {
+    opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+    color: #fff;
+}
+
+.song .thumb {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    margin: 0 8px;
+    border-radius: 100%;
+}
+
+.song .body {
+    flex-grow: 1;
+    font-size: 18px;
+}
+
+.song .author {
+    font-size: 14px;
+    color: #999;
+}
+
+.song .option {
+    color: #999;
+}
